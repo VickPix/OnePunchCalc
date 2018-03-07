@@ -272,7 +272,7 @@ function main() {
       console.log("Integration with Permissions API is not enabled, still try to start");
       startApp();
     });
-  } if ('DeviceMotionEvent' in window) {
+  } else if ('DeviceMotionEvent' in window) {
   document.getElementById('moApi').innerHTML = 'Device Motion API';
   
   var onDeviceMotion = function (eventData) {
