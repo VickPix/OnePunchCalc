@@ -301,23 +301,27 @@ if ('LinearAccelerationSensor' in window && 'Gyroscope' in window) {
   }));
   gyroscope.start();
   
-} else {
-  if ('DeviceMotionEvent' in window) {
-    document.getElementById('moApi').innerHTML = 'Device Motion API';
-    
-    var onDeviceMotion = function (eventData) {
-      accelerationHandler(eventData.acceleration, 'moAccel');
-      accelerationHandler(eventData.accelerationIncludingGravity, 'moAccelGrav');
-      rotationHandler(eventData.rotationRate);
-      intervalHandler(eventData.interval);
-    }
-    
-    window.addEventListener('devicemotion', onDeviceMotion, false);
-  } else {
-    document.getElementById('moApi').innerHTML = 'No Accelerometer & Gyroscope API available';
+} else if ('DeviceMotionEvent' in window) {
+  document.getElementById('moApi').innerHTML = 'Device Motion API';
+  
+  var onDeviceMotion = function (eventData) {
+    accelerationHandler(eventData.acceleration, 'moAccel');
+    accelerationHandler(eventData.accelerationIncludingGravity, 'moAccelGrav');
+    rotationHandler(eventData.rotationRate);
+    intervalHandler(eventData.interval);
   }
+  
+  window.addEventListener('devicemotion', onDeviceMotion, false);
+} else {
+  document.getElementById('moApi').innerHTML = 'No Accelerometer & Gyroscope API available';
 }
-
+}
+/*
+else {
+    setGameText("Your browser doesn't support sensors.");
+    setMeasurement(0);
+  }
+}*/
 function accelerationHandler(acceleration, targetId) {
   var info, xyz = "[X, Y, Z]";
 
@@ -338,10 +342,6 @@ function rotationHandler(rotation) {
 
 function intervalHandler(interval) {
   document.getElementById("moInterval").innerHTML = interval;
-}else {
-    setGameText("Your browser doesn't support sensors.");
-    setMeasurement(0);
-  }
 }
 
   </script>
