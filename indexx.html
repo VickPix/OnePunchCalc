@@ -45,7 +45,7 @@
    var audioContext = new AudioContext();
 var game_text = null;
 var measurement = null;
-var gauge = null;
+//var gauge = null;
 var acl = null;
 var speedCalculator = null;
 var quotes = ["Punch not detected", "Great punch!", "Roll with the punches!"];
@@ -158,7 +158,7 @@ function setGameText(text) {
 }
 
 function setMeasurement(val) {
-  gauge.set(val);
+  //gauge.set(val);
   measurement.style.display="none";
   measurement.style.display="block";
 }
@@ -220,7 +220,7 @@ function generateKickSound() {/*
 
 function main() {
   // Create gauge
-  var opts = {
+  /*var opts = {
     angle: 0, // The span of the gauge arc
     lineWidth: 0.44, // The line thickness
     radiusScale: 1, // Relative radius
@@ -243,8 +243,8 @@ function main() {
       color: "#000000",  // Optional: Label text color
       fractionDigits: 0  // Optional: Numerical precision. 0=round off.
     }
-  };
-
+  };*/
+/*
   var target = document.getElementById('gauge'); // your canvas element
   let width = window.screen.availWidth / 2;
   let height = window.screen.availHeight / 2;
@@ -256,12 +256,14 @@ function main() {
     target.width = width;
     target.height = height;
   }
-
+  */
+/*
   gauge = new Gauge(target).setOptions(opts);
   gauge.setTextField(document.getElementById("preview"));
   gauge.maxValue = 50; // set max gauge value
   gauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
   gauge.animationSpeed = 32; // set animation speed (32 is default value)
+  */
 
   // Show game text element
   game_text = document.getElementById("game_text");
