@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
   <meta name="description" content="Punch-O-Meter">
   <meta name="theme-color" content="#0071c5">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="styles.css">
   <link rel="shortcut icon" sizes="192x192" href="./images/app-icon-192.png">
   
 </head>
@@ -14,7 +14,7 @@
 <body>
   <div class="container" align="center">
       <div id="intro" class="punchAnimation">
-         <img class="logo" src="./images/punchometer.png"/>
+         <img class="logo" src="images/punchometer.png"/>
          <div class="readyToPunch">
             Ready to measure the strenght of your punch?
          </div>
@@ -31,15 +31,17 @@
         <div>km/h</div>
       </div>
   </div>
-  <script src="./gauge/gauge.js"></script>
+  <script src="gauge/gauge.js"></script>
   <script>
+    setTimeout(main, 2000);
+    /*
     let intro = document.getElementById("intro");
     function onAnimationEnd() {
         intro.removeEventListener("animationend", onAnimationEnd);
         setTimeout(main, 2000);
     }
     intro.addEventListener("animationend", onAnimationEnd, false);
-    
+*/
    var audioContext = new AudioContext();
 var game_text = null;
 var measurement = null;
